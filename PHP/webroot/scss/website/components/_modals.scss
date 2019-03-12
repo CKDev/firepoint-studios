@@ -1,0 +1,64 @@
+/*
+=========================================================================================
+COMPONENT: Animated Modals
+=========================================================================================
+*/
+// 
+// --------------------------------------------------------------------------------------
+// Animated Modals
+
+.animated-modal {
+
+	.animated-modal-close {
+		float: right;
+		font-size: 2rem;
+		line-height: 0;
+		margin-top: 25px;
+	}
+	.animated-modal-content {
+		margin-bottom: 75px;
+	}
+	.cursor {
+		cursor: pointer;
+	}
+	.clearfix {
+		clear: both;
+		margin-bottom: 75px;
+	}
+	.content-toggle {
+			display: none;
+		}
+
+
+
+	.profile-name {
+		
+	}
+	.profile-role, .profile-bio {
+		@extend .text-tan;
+	}
+
+	.profile-text .content {
+		display: block !important;
+	}
+	.modal_link {
+		display: none !important;
+	}
+}
+
+// --------------------------------------------------------------------------------------
+// --------------------------------------------------------------------------------------
+// MOBILE NAVIGATION - Toggled open
+@media (max-width: $breakpoint-global) {
+	.animated-modal {
+
+		.clearfix {
+			margin-bottom: 0px;
+		}
+
+		.profile-figure {
+			margin-bottom: 40px;
+		}
+
+	}
+}

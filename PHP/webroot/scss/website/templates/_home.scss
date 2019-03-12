@@ -1,0 +1,35 @@
+/*
+=========================================================================================
+PAGE TEMPLATE: Home Page
+=========================================================================================
+*/
+
+body.welcome { // <- Home Page is identified with a '.welcome' class
+	
+	#home-team {
+		margin-bottom: 40px;
+	}
+
+
+	#layout-wrapper {
+		section.container-fluid {
+			
+			margin-bottom: 150px;
+			
+			@media (max-width: $breakpoint-global) {
+				margin-bottom: 40px;
+			}
+		}
+	}
+}
+
+
+// --------------------------------------------------------------------------------------
+// --------------------------------------------------------------------------------------
+
+@media (max-width: $breakpoint-global) {
+	body.welcome {
+
+		
+	}
+}

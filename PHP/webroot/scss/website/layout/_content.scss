@@ -1,0 +1,52 @@
+/*
+=========================================================================================
+LAYOUT: GLOBAL CONTENT
+=========================================================================================
+*/
+// Global Content / #layout-wrapper
+// --------------------------------------------------------------------------------------
+
+// Variables
+
+
+// --------------------------------------------------------------------------------------
+// Wrapper
+#layout-wrapper {
+	
+	section {
+		h6, .h6, h5, .h5, h4, .h4, h3, .h3, h2, .h2, h1, .h1 {
+    		margin-bottom: 40px;
+    		@media (max-width: $breakpoint-global) {
+				margin-bottom: 20px;
+			}
+    	}
+	}
+
+	section.container-fluid {
+		margin-bottom: 40px;
+	}
+
+
+	// Team Images
+	.team-section figure, .team-article figure {
+		width: 100%;
+    	height: auto;
+    	border: 5px solid transparent;
+    	box-shadow: 0px 0px 0px 1px $color-primary;
+    	border-radius: 50%;
+    	display: block;
+
+		img.rounded-circle {
+			width: 94%;
+			margin: 3%;
+		}
+	}
+}
+
+
+// --------------------------------------------------------------------------------------
+// --------------------------------------------------------------------------------------
+
+@media (max-width: $breakpoint-global) {
+	
+}

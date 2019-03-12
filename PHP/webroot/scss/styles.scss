@@ -1,0 +1,51 @@
+/*
+=========================================================================================
+MY FAMILY TRAVELS
+Copyright 2017(+) Station Built and their team of killer coders
+• stationbuilt.com
+=========================================================================================
+=========================================================================================
+*/
+// VARIABLES
+// Custom Variables, used to override Bootstraps and stand in for _custom.scss
+// --------------------------------------------------------------------------------------
+//@import url('https://fonts.googleapis.com/css?family=Open+Sans|Roboto+Condensed');
+@import "_variables.scss";
+
+
+// MIX-INS
+// Custom Functions/Mixins - including/calling these here, allows use down the cascade
+// --------------------------------------------------------------------------------------
+@import "mixins/_opacity-background.scss";
+@import "mixins/_opacity-color.scss";
+
+
+// SETUP FRAMEWORK
+// --------------------------------------------------------------------------------------
+@import "_bootstrap.scss";			// Bootstrap 4
+@import "vendors/animate.min.scss"; // Animated Modals CSS
+@import "website.scss";				// Website specific styles
+ 
+// Layout Sections
+@import "website/layout/_header.scss";
+@import "website/layout/_navigation.scss";
+@import "website/layout/_footer.scss";
+@import "website/layout/_content.scss";
+
+
+// COMPONENTS
+// --------------------------------------------------------------------------------------
+@import "website/components/_modals.scss";
+
+
+// MARKUP - Templates
+// --------------------------------------------------------------------------------------
+@import "website/templates/_home.scss";
+@import "website/templates/_contact.scss";
+@import "website/templates/_services.scss";
+@import "website/templates/_team.scss";
+
+
+// MARKUP - HELPERS
+// --------------------------------------------------------------------------------------
+@import "website/_helpers.scss";

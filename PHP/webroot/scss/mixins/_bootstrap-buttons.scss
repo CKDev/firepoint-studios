@@ -1,0 +1,380 @@
+/*
+Replacement to the default Bootstrap - Buttons SCSS, which has been commented out in the bootstrap.scss @import line
+*/
+
+// scss-lint:disable QualifyingElement
+
+// Button variants
+//
+// Easily pump out default styles, as well as :hover, :focus, :active,
+// and disabled options for all buttons
+
+@mixin stationbuilt-button-variant($color, $background, $border) {
+  $active-background: darken($background, 100%);
+  $active-border: darken($border, 10%);
+
+  color: $color;
+  border-color: $border;
+  &::before {
+    background-color: $background;
+  }
+
+  /* REMOVED
+  @include box-shadow($btn-box-shadow);
+  */
+  // Hover and focus styles are shared
+  @include hover {
+    color: $color;
+    border-color: $active-border;
+  }
+
+  &:hover::after {
+      left: 0;
+      top: -350px;
+      border-bottom: 500px solid $active-background;
+  }
+
+  &:focus,
+  &.focus {
+    /* REMOVED
+    // Avoid using mixin so we can pass custom focus shadow properly
+    @if $enable-shadows {
+      box-shadow: $btn-box-shadow, 0 0 0 2px rgba($border, .5);
+    } @else {
+      box-shadow: 0 0 0 2px rgba($border, .5);
+    }
+    */
+  }
+
+  // Disabled comes first so active can properly restyle
+  &.disabled,
+  &:disabled {
+    border-color: $border;
+    background-color: $background;
+  }
+
+  &:active,
+  &.active,
+  .show > &.dropdown-toggle {
+    color: $color;
+    background-color: $active-background;
+    border-color: $active-border;
+    /* REMOVED
+    background-image: none; // Remove the gradient for the pressed/active state
+    @include box-shadow($btn-active-box-shadow);
+    */
+  }
+} // END mixin
+
+// ADDED: Navigation buttons in the header
+@mixin stationbuilt-button-variant-navlink($color, $background, $border) {
+  $active-background: darken($background, 15%);
+  $active-border: darken($border, 10%);
+  
+  border-color: $btn-secondary-border;
+  &::before {
+    background-color: $btn-secondary-bg;
+  }
+
+  // Hover and focus styles are shared
+  @include hover {
+    color: $color;
+    border-color: $active-border;
+  }
+
+  &:hover::after {
+      left: 0;
+      top: -350px;
+      border-bottom: 500px solid $active-background;
+  }
+
+  &:active,
+  &.active,
+  .show > &.dropdown-toggle {
+    color: $color;
+    background-color: $active-background;
+    border-color: $active-border;
+  }
+} // END mixin
+
+
+@mixin stationbuilt-button-outline-variant($color, $color-hover: #fff) {
+  color: $color;
+  background-image: none;
+  background-color: transparent;
+  border-color: $color;
+
+  @include hover {
+    color: $color-hover;
+    background-color: $color;
+    border-color: $color;
+  }
+
+  &:focus,
+  &.focus {
+    box-shadow: 0 0 0 2px rgba($color, .5);
+  }
+
+  &.disabled,
+  &:disabled {
+    color: $color;
+    background-color: transparent;
+  }
+
+  &:active,
+  &.active,
+  .show > &.dropdown-toggle {
+    color: $color-hover;
+    background-color: $color;
+    border-color: $color;
+  }
+} // END mixin
+
+
+// Button sizes
+@mixin stationbuilt-button-size($padding-y, $padding-x, $font-size, $border-radius) {
+  padding: $padding-y $padding-x;
+  font-size: $font-size;
+  @include border-radius($border-radius);
+} // END mixin
+
+
+
+//
+// Base styles
+//
+.btn {
+// Bootstrap Defaults:
+  display: inline-block;
+  font-size: $font-size-sm;
+  font-weight: $btn-font-weight;
+  line-height: $btn-line-height;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  user-select: none;
+  border: none;                             // REMOVED: $input-btn-border-width solid transparent;
+
+
+// Added/New Styles:
+  cursor: pointer;                          // ADDED
+//  text-transform: uppercase;              // ADDED
+//  letter-spacing: 0.075rem;               // ADDED
+  -webkit-font-smoothing: antialiased;      // ADDED
+  -webkit-user-select: none;                // ADDED
+  -moz-user-select: none;                   // ADDED
+  -ms-user-select: none;                    // ADDED
+  touch-action: manipulation;               // ADDED
+
+  
+  position: relative;                       // ADDED
+  z-index: 10;                              // ADDED
+  white-space: nowrap;                      // ADDED
+  overflow: hidden;                         // ADDED
+  margin-bottom: 0;                         // ADDED
+  outline: 0;                               // ADDED
+  background-image: none;                   // ADDED
+  background: 0 0;
+
+  &::before {
+    content: '';
+    position: absolute;
+    z-index: -10;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  &::after {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    border-bottom: 500px solid transparent;
+    border-right: 500px solid transparent;
+    width: 200%;
+    top: 0; left: -130%;
+    
+    -webkit-transition: all .5s;
+    -moz-transition: all .5s;
+    transition: all .5s;
+    
+  }
+
+// Functions:
+  @include stationbuilt-button-size($btn-padding-y, $btn-padding-x, ($font-size-sm), $btn-border-radius);
+  @include transition($btn-transition);
+
+  // Share hover and focus styles
+  @include hover-focus {
+    text-decoration: none;
+  }
+
+  &:hover:after {
+    left: 0; top: -350px;
+    border-bottom: 500px solid transparent;
+  }
+
+  &:focus,
+  &.focus {
+    outline: 0;
+    /* REMOVED
+    box-shadow: $btn-focus-box-shadow;
+    */
+  }
+
+  // Disabled comes first so active can properly restyle
+  &.disabled,
+  &:disabled {
+    cursor: $cursor-disabled;
+    opacity: .65;
+    /* REMOVED
+    @include box-shadow(none);
+    */
+  }
+
+  &:active,
+  &.active {
+    background-image: none;
+    /* REMOVED
+    @include box-shadow($btn-focus-box-shadow, $btn-active-box-shadow);
+    */
+  }
+}
+
+// Future-proof disabling of clicks on `<a>` elements
+a.btn.disabled,
+fieldset[disabled] a.btn {
+  pointer-events: none;
+}
+
+
+
+//
+// Alternate buttons
+//
+.btn, .btn-default {
+  @include stationbuilt-button-variant($text-black, $gray-lighter, $black);
+}
+.btn-primary {
+  @include stationbuilt-button-variant($btn-primary-color, $btn-primary-bg, $btn-primary-border);
+}
+.btn-secondary {
+  @include stationbuilt-button-variant($btn-secondary-color, $btn-secondary-bg, $btn-secondary-border);
+}
+.btn-info {
+  @include stationbuilt-button-variant($btn-info-color, $btn-info-bg, $btn-info-border);
+}
+.btn-success {
+  @include stationbuilt-button-variant($btn-success-color, $btn-success-bg, $btn-success-border);
+}
+.btn-warning {
+  @include stationbuilt-button-variant($btn-warning-color, $btn-warning-bg, $btn-warning-border);
+}
+.btn-danger {
+  @include stationbuilt-button-variant($btn-danger-color, $btn-danger-bg, $btn-danger-border);
+}
+// ADDED
+.btn-link {
+  @include stationbuilt-button-variant($link-color, transparent, transparent);
+}
+.btn-navlink {
+  @include stationbuilt-button-variant-navlink($btn-primary-color, $btn-primary-bg, $btn-primary-border);
+}
+
+
+// Remove all backgrounds
+.btn-outline-primary {
+  @include stationbuilt-button-outline-variant($btn-primary-bg);
+}
+.btn-outline-secondary {
+  @include stationbuilt-button-outline-variant($btn-secondary-border);
+}
+.btn-outline-info {
+  @include stationbuilt-button-outline-variant($btn-info-bg);
+}
+.btn-outline-success {
+  @include stationbuilt-button-outline-variant($btn-success-bg);
+}
+.btn-outline-warning {
+  @include stationbuilt-button-outline-variant($btn-warning-bg);
+}
+.btn-outline-danger {
+  @include stationbuilt-button-outline-variant($btn-danger-bg);
+}
+
+
+//
+// Link buttons
+//
+
+// Make a button look and behave like a link
+.btn-link {
+  color: $link-color;
+  font-weight: $font-weight-normal;
+  border-radius: 0;
+
+  &,
+  &:active,
+  &.active,
+  &:disabled {
+    background-color: transparent;
+    @include box-shadow(none);
+  }
+  &,
+  &:focus,
+  &:active {
+    border-color: transparent;
+  }
+  @include hover {
+    border-color: transparent;
+  }
+  @include hover-focus {
+    color: $link-hover-color;
+    text-decoration: $link-hover-decoration;
+    background-color: transparent;
+  }
+  &:disabled {
+    color: $btn-link-disabled-color;
+
+    @include hover-focus {
+      text-decoration: none;
+    }
+  }
+}
+
+
+//
+// Button Sizes
+//
+.btn-lg {
+  // line-height: ensure even-numbered height of button next to large input
+  @include stationbuilt-button-size($btn-padding-y-lg, $btn-padding-x-lg, ($font-size-lg * .85), $btn-border-radius-lg);
+}
+.btn-sm {
+  // line-height: ensure proper height of button next to small input
+  @include stationbuilt-button-size($btn-padding-y-sm, $btn-padding-x-sm, ($font-size-sm * .85), $btn-border-radius-sm);
+}
+
+
+//
+// Block button
+//
+.btn-block {
+  display: block;
+  width: 100%;
+}
+
+// Vertically space out multiple block buttons
+.btn-block + .btn-block {
+  margin-top: $btn-block-spacing-y;
+}
+
+
+// Specificity overrides
+input[type="submit"],
+input[type="reset"],
+input[type="button"] {
+  &.btn-block {
+    width: 100%;
+  }
+}

@@ -1,0 +1,308 @@
+/*
+=========================================================================================
+LAYOUT: GLOBAL HEADER
+=========================================================================================
+*/
+// Global Navigation
+// --------------------------------------------------------------------------------------
+
+// Variables
+
+
+// --------------------------------------------------------------------------------------
+// Body Adjustment - fix padding to match the sticky header
+
+#layout-navigation {
+	
+	// Navbar tweaks & overrides
+	.navbar {
+		padding-top: 0;
+		padding-bottom: 0;
+		height: 100%;
+	}
+	.navbar-nav {
+    	flex-direction: row;
+    }
+    .nav-item {
+    	padding-top: .5em;
+    }
+
+    // Navigation Links and Buttons
+    .nav-link {
+    	display: block;
+    	color: $text-primary;
+		font-family: $font-family-base;
+		font-weight: 300;
+		font-weight: bold;
+		font-style: normal;
+		text-transform: uppercase;
+		letter-spacing: 1px;
+		padding-left: .75em;
+		padding-right: .75em;
+		cursor: pointer;
+
+		&:hover, &.active {
+			color: $text-orange;
+			border-color: $text-orange;
+			span {
+				border-bottom: 1px solid $text-orange;
+				border-bottom: .5px solid $text-orange;
+			}
+		}
+	}
+	
+	// --- Toggle -------------------------------
+	// Navbar Toggle - checbox and label used to trigger the mobile navigation menu (applies '.mobile-menu' to the <body> via javascript)
+	#navbar-toggle { 
+		position: absolute;
+		top: 50%; left: 50%;
+		z-index: 2;
+		margin-left: -8px;
+		margin-top: -11px;
+		cursor: pointer;
+		display: block;
+		line-height: 0px;
+		min-width: 30px;
+
+		* {
+			line-height: 0px;
+			box-sizing: border-box;
+			 -webkit-transition: all 0.2s ease-in-out;
+				-moz-transition: all 0.2s ease-in-out;
+				  -o-transition: all 0.2s ease-in-out;
+					 transition: all 0.2s ease-in-out;
+		}
+	}
+	#navbar-toggle-checkbox {
+		display: block;
+		 -webkit-appearance: none;
+			-moz-appearance: none;
+			display: none;
+	}
+	#navbar-toggle label {
+		position: relative;
+		line-height: 0px;
+		cursor: pointer;
+		display: block;
+	}
+	#navbar-toggle, #navbar-toggle label {
+		height: 20px;
+		width: 16px;
+	}
+	#navbar-toggle-switch .bar {
+		height: 2px;
+		width: 16px;
+		background-color: $text-white;
+
+		&.diagonal, &.horizontal {
+			position:relative; float:left;
+		}
+		&.diagonal.part-1 {
+			margin-top: 4px;
+		}
+		&.diagonal.part-2 {
+			margin-top: 4px;
+		}
+		&.horizontal {
+			margin-top: 4px;
+		}
+	}
+	#navbar-toggle-checkbox:checked ~ #navbar-toggle-switch .horizontal { opacity: 0; }
+	#navbar-toggle-checkbox:checked ~ #navbar-toggle-switch .diagonal.part-1 { transform: rotate( 225deg); -webkit-transform: rotate( 225deg); width: 20px; margin-top: 10px; margin-left: -2px; }
+	#navbar-toggle-checkbox:checked ~ #navbar-toggle-switch .diagonal.part-2 { transform: rotate(-225deg); -webkit-transform: rotate(-225deg); width: 20px; margin-top: -8px; margin-left: -2px;  }
+
+
+	// --- Mobile Menu --------------------------
+	// https://codepen.io/virgilpana/full/NPzodr
+	.nav-circle {
+		position: absolute;
+		top: 2px; right: 2px;
+		z-index: -1;
+		border-radius: 50%;
+		width: 50px;
+		height: 50px; 
+		background: $color-orange;
+		opacity: .8;
+		
+		
+		-webkit-transition: all 600ms cubic-bezier(0.000, 0.995, 0.990, 1.000);
+		   -moz-transition: all 600ms cubic-bezier(0.000, 0.995, 0.990, 1.000);
+		    -ms-transition: all 600ms cubic-bezier(0.000, 0.995, 0.990, 1.000);
+		     -o-transition: all 600ms cubic-bezier(0.000, 0.995, 0.990, 1.000);
+		        transition: all 600ms cubic-bezier(0.000, 0.995, 0.990, 1.000);
+
+	}
+
+
+	// --- MOBILE -----------------------------------------
+	@media (max-width: $breakpoint-global) {
+
+	}
+}
+
+// Active Navigation
+body.team {
+	a.nav-link.page-team {
+		color: $text-orange !important;
+	}
+}
+body.process {
+	.nav-link.page-process {
+		color: $text-orange !important;
+	}
+}
+body.services {
+	.nav-link.page-services {
+		color: $text-orange !important;
+	}
+}
+body.contact {
+	.nav-link.page-contact {
+		color: $text-orange !important;
+	}
+}
+
+// Mobile Menu Defaults
+
+body.mobile-menu #layout-navigation .nav-circle {
+		position: absolute;
+		top: -500px; right: -1000px; 
+		width: 2000px;
+		height: 2000px;
+		background: $brand-primary;
+		opacity: 1;
+		
+		/*
+		-webkit-transition: all 1000ms cubic-bezier(0.000, 0.995, 0.990, 1.000);
+		   -moz-transition: all 1000ms cubic-bezier(0.000, 0.995, 0.990, 1.000);
+		    -ms-transition: all 1000ms cubic-bezier(0.000, 0.995, 0.990, 1.000);
+		     -o-transition: all 1000ms cubic-bezier(0.000, 0.995, 0.990, 1.000);
+		        transition: all 1000ms cubic-bezier(0.000, 0.995, 0.990, 1.000);
+		*/
+		
+	}
+
+body.mobile-menu #layout-navigation #navigation-links a {
+	font-size: 2rem;
+	height: 50px;
+	margin-top: 25px;
+	visibility: hidden;
+  	opacity:0;
+  	display: block;
+	-webkit-transition: all 100ms ease-in-out; // cubic-bezier(0.000, 0.995, 0.990, 1.000)
+	   -moz-transition: all 100ms ease-in-out; // cubic-bezier(0.000, 0.995, 0.990, 1.000)
+	    -ms-transition: all 100ms ease-in-out; // cubic-bezier(0.000, 0.995, 0.990, 1.000)
+	     -o-transition: all 100ms ease-in-out; // cubic-bezier(0.000, 0.995, 0.990, 1.000)
+	        transition: all 100ms ease-in-out; // cubic-bezier(0.000, 0.995, 0.990, 1.000)
+}
+body.mobile-menu #layout-navigation #navigation-links a:nth-of-type(1) {
+	visibility: visible;
+	opacity: 1;
+	transition-delay: 300ms;
+	}
+body.mobile-menu #layout-navigation #navigation-links a:nth-of-type(2) {
+	visibility: visible;
+	opacity: 1;
+	transition-delay: 400ms;
+	}
+body.mobile-menu #layout-navigation #navigation-links a:nth-of-type(3) {
+	visibility: visible;
+	opacity: 1;
+	transition-delay: 500ms;
+	}
+body.mobile-menu #layout-navigation #navigation-links a:nth-of-type(4) {
+	visibility: visible;
+	opacity: 1;
+	transition-delay: 600ms;
+	}
+body.mobile-menu #layout-navigation #navigation-links a:nth-of-type(5) {
+	visibility: visible;
+	opacity: 1;
+	transition-delay: 700ms;
+	}
+/*
+body.mobile-menu #layout-navigation #navigation-links a:nth-of-type(6) {
+	visibility: visible;
+	opacity: 1;
+	transition-delay: 0.03s;
+	transition-delay: 0.06s;
+	transition-delay: 0.09s;
+	transition-delay: 0.12s;
+	transition-delay: 0.15s;
+	}
+*/
+
+
+// --------------------------------------------------------------------------------------
+// --------------------------------------------------------------------------------------
+// MOBILE NAVIGATION - Toggled open
+@media (max-width: $breakpoint-global) {
+	
+	#layout-navigation {
+		#navigation-links {
+			top: 100px;
+			width: 60%;
+			@media (max-width: 400px) {
+				width: 80%;
+			}
+			margin: 0px auto;
+    		text-align: center;
+    		float: initial;
+
+			.nav {
+				justify-content: flex-end !important;
+				flex-direction: column;
+				display: none;
+				
+				a {
+					font-family: $font-family-headers;
+					color: $text-tan;
+					opacity: 0;
+					text-transform: initial;
+				}
+			}
+		}
+	}
+
+	body.mobile-menu {
+
+		#layout-navigation {
+			height: auto;
+			max-height: initial; 
+			&.align-items-center {
+    			align-items: initial !important;
+			}
+
+			#navbar-branding {
+				display: block;
+			}
+			#navigation-links .nav {
+				display: block;
+    			/*
+    			a {
+    				opacity: 1;
+    			}
+    			*/
+			}
+			
+			.navbar-nav.hidden-sm-down {
+				display: block !important;
+				height: auto;
+				margin-top: .25em;
+				margin-bottom: 20px;
+			}
+			.navbar-nav {
+    			flex-direction: column;
+			}
+			.nav-link {
+				min-height: auto;
+				padding: 5px 20px;
+				padding-top: .25em;
+				
+				span { display: inline; }
+			}
+		}
+	}
+
+
+}

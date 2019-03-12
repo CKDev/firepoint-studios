@@ -1,0 +1,70 @@
+/*
+=========================================================================================
+PAGE TEMPLATE: Team
+=========================================================================================
+*/
+
+body.team {
+
+	.row.team {
+		margin-top: 75px;
+	}
+	.row.team:first-child {
+		margin-top: 0px;
+	}
+
+	.profile {
+
+	}
+	.profile-name {
+		@extend .text-serif;
+		@extend .text-orange;
+		font-weight: 700;
+		font-size: 1.25rem;
+		letter-spacing: .015rem;
+		margin-bottom: 0px !important;
+	}
+	.profile-role {
+		font-weight: bold;
+	}
+
+	.profile-bio {
+		margin-bottom: 0px !important;
+		
+		span.modal-only {
+			display: none;
+		}
+	}
+
+	.read-more {
+		span {
+			font-weight: bold;
+		}
+	}
+
+	
+	// Modal
+	.animated-modal-content {
+		.profile-bio {
+			span.modal-only {
+				display: inline;
+			}
+		}
+
+		.read-more {
+			display: none;
+		}
+	}
+}
+
+
+// --------------------------------------------------------------------------------------
+// --------------------------------------------------------------------------------------
+// MOBILE NAVIGATION - Toggled open
+@media (max-width: $breakpoint-global) {
+	body.team {
+		.profile-text {
+			margin-bottom: 40px;
+		}
+	}
+}

@@ -1,0 +1,8 @@
+// Background Opacity
+// ---------------------------------------------------------------------------------------
+// 
+
+@mixin opacity-background($color, $opacity: 1.00) {
+	background: $color; /* The Fallback */
+	background: rgba($color, $opacity);
+}

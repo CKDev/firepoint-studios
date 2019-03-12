@@ -1,0 +1,216 @@
+/*
+=========================================================================================
+LAYOUT: GLOBAL HEADER
+=========================================================================================
+*/
+// Global Layout -> Navigation (placed at the bottom of the HTML templates)
+// --------------------------------------------------------------------------------------
+
+// Variables
+$header-height: 200px;
+$nav-font-size: $font-size-base;
+
+$breakpoint-header-height: 60px;
+$breakpoint-font-size: 12px;
+
+
+// --------------------------------------------------------------------------------------
+// Wrapper
+#layout-header {
+	// background: $body-bg;
+
+	@media (max-width: $breakpoint-global) {
+		position: fixed;
+		top: 0px; left: 0px;
+		z-index: 10;
+		padding-top: 15px;
+		padding-bottom: 40px;
+		padding-left: 15px; // <!-- will be 25px / there's +10px on the inner '.col-16' that wraps the branding and navigation
+		margin-left: 0px;
+		min-height: $breakpoint-header-height;
+		height: 160px;
+		width: 100%;
+		
+		background: $body-bg;
+		background: rgba(225,213,207,1);
+		background: -moz-linear-gradient(top, rgba(225,213,207,1) 0%, rgba(225,213,207,1) 50%, rgba(225,213,207,0) 100%);
+		background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(225,213,207,1)), color-stop(50%, rgba(225,213,207,1)), color-stop(100%, rgba(225,213,207,0)));
+		background: -webkit-linear-gradient(top, rgba(225,213,207,1) 0%, rgba(225,213,207,1) 50%, rgba(225,213,207,0) 100%);
+		background: -o-linear-gradient(top, rgba(225,213,207,1) 0%, rgba(225,213,207,1) 50%, rgba(225,213,207,0) 100%);
+		background: -ms-linear-gradient(top, rgba(225,213,207,1) 0%, rgba(225,213,207,1) 50%, rgba(225,213,207,0) 100%);
+		background: linear-gradient(to bottom, rgba(225,213,207,1) 0%, rgba(225,213,207,1) 50%, rgba(225,213,207,0) 100%);
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#E1D5CF', endColorstr='#E1D5CF', GradientType=0 );
+	}
+
+	.firepoint { // Adjust the dot, so it stays to the right
+		left: initial;
+		right: 0;
+	}
+}
+
+#layout-navigation {
+	max-height: $header-height;
+	height: $header-height;
+	padding-top: 115px;
+	padding-bottom: 0px;
+	
+	@media (max-width: $breakpoint-global) {
+		position: fixed;
+		top: 0px; left: 0px;
+		z-index: 10;
+		padding-top: 15px;
+		padding-bottom: 40px;
+		padding-left: 15px; // <!-- will be 25px / there's +10px on the inner '.col-16' that wraps the branding and navigation
+		margin-left: 0px;
+		min-height: $breakpoint-header-height;
+		height: auto;
+		width: 100%;
+	}
+
+	.navigation-bar.align-items-center {
+		display: block;
+	}
+
+
+	// Firepoint. mark/logo
+	#navbar-brand {
+		position: relative;
+		cursor: pointer;
+	//	height: 55px;
+		min-width: 185px;
+		width: 185px;
+		float: left;
+		z-index: 4;
+		margin-top: -.55%;
+		margin-top: 0;
+
+		img.logo {
+			position: absolute;
+			z-index: 1;
+		}
+		img.logo-inverse {
+			position: absolute;
+			z-index: 2;
+		}
+	}
+
+	// Mobile Navigation Trigger (hidden until small) & Dot
+	#navigation-trigger {
+		position: relative;
+		cursor: pointer;
+		height: 55px;
+		min-width: 55px;
+		width: 55px;
+		padding-right: 10px;
+    	padding-left: 10px;
+		margin-top: -.75%;
+		margin-top: 0;
+		float: right;
+		z-index: 4;
+
+		@media (max-width: $breakpoint-global) {
+			position: absolute;
+			right: 25px;
+			margin-top: -.5%;
+			min-height: 55px;
+			padding-bottom: 0px;
+			z-index: 3;
+		}
+	}
+
+	#navigation-links {
+		position: relative;
+		float: right;
+		z-index: 3;
+		padding-right: 50px;
+		.nav {
+			@extend .justify-content-end;
+			@extend .align-items-center;
+			height: 100%;
+			z-index: 1;
+			margin-top: 5px;
+		}
+
+
+		#navigation-mask {
+			position: absolute;
+			z-index: 2;
+			top: 22px; left: -10px;
+			height: 18px;
+			width: 105%;	// on page load, we're going to start with the navigation closed, swipe it open, then close it again
+			
+			background: $brand-background;
+			overflow: visible;
+			display: block;
+		}
+	}
+
+}
+
+
+body:not(.welcome) {
+	#navigation-links .nav {
+	//	display: none;
+	}
+	#navigation-links .nav.display { // <!-- class is added by a javascript trigger on the firepoint dot
+		display: flex;
+	}
+}
+body.welcome {
+	#layout-navigation {
+		#navigation-links {
+			#navigation-mask {
+				width: 10px;
+				display: none;
+			}
+		}
+	}
+}
+
+
+// Firepoint. logo
+img.logo, img.logo-inverse {
+	-webkit-transition: all 200ms ease-in-out; // cubic-bezier(0.000, 0.995, 0.990, 1.000)
+	   -moz-transition: all 200ms ease-in-out; // cubic-bezier(0.000, 0.995, 0.990, 1.000)
+	    -ms-transition: all 200ms ease-in-out; // cubic-bezier(0.000, 0.995, 0.990, 1.000)
+	     -o-transition: all 200ms ease-in-out; // cubic-bezier(0.000, 0.995, 0.990, 1.000)
+	        transition: all 200ms ease-in-out; // cubic-bezier(0.000, 0.995, 0.990, 1.000)
+}
+img.logo {
+	visibility: visible;
+	opacity: 1;
+	display: block;
+}
+img.logo-inverse {
+	visibility: hidden;
+	opacity: 0;
+	display: block;
+}
+
+body.mobile-menu img.logo {
+	visibility: hidden;
+	opacity: 0;
+	transition-delay: 200ms;
+	}
+body.mobile-menu img.logo-inverse {
+	visibility: visible;
+	opacity: 1;
+	transition-delay: 0s;
+	}
+
+
+// --------------------------------------------------------------------------------------
+// --------------------------------------------------------------------------------------
+// MOBILE NAVIGATION - Toggled open
+@media (max-width: $breakpoint-global) {
+	
+	body {
+		padding-top: 120px;
+	}
+	#navbar-branding {
+		display: none;
+	}
+	#navigation-mask {
+		display: none !important;
+	}
+}

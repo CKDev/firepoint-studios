@@ -1,0 +1,58 @@
+/*
+=========================================================================================
+LAYOUT: GLOBAL FOOTER
+=========================================================================================
+*/
+// Global Layout -> Footer (placed at the bottom of the HTML templates)
+// --------------------------------------------------------------------------------------
+
+// Variables
+
+
+// --------------------------------------------------------------------------------------
+// Wrapper
+#layout-footer {
+    overflow: hidden;
+
+    #contact-toggle {
+    	
+    }
+	#contact-information {
+		margin-top: 25px;
+        opacity: 0;
+	}
+    .toggle-open {
+        display: inline-block;
+    }
+    .toggle-close {
+        display: none;
+    }
+    .close-contact {
+        position: absolute;
+        top: -55px;
+        right: 40px;
+        font-size: 2rem;
+        line-height: 0;
+        display: none;
+    }
+}
+body.contact-open #layout-footer {
+    .toggle-open {
+        display: none;
+    }
+    .toggle-close {
+        display: inline-block;
+    }
+    .close-contact {
+        display: block;
+    }
+}
+
+
+// --------------------------------------------------------------------------------------
+// --------------------------------------------------------------------------------------
+@media (max-width: $breakpoint-global) {
+	#layout-footer {
+        
+    }
+}

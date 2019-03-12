@@ -1,0 +1,8 @@
+// Font-Color Opacity
+// ---------------------------------------------------------------------------------------
+// 
+
+@mixin opacity-color($color, $opacity: 1.00) {
+	color: $color;
+	color: rgba($color, $opacity);
+}
