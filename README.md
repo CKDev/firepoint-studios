@@ -16,10 +16,10 @@ From the root directory, run the following commands to build the docker containe
 docker build -t latest .
 
 // For deployment to staging
-heroku container:push web --app ckdtech-staging
-heroku container:release web --app ckdtech-staging
+heroku container:push web --app firepoint-staging
+heroku container:release web --app firepoint-staging
 
 // For deployment to production
-heroku container:push web --app ckdtech-production
-heroku container:release web --app ckdtech-production
+heroku container:push web --app firepoint-production
+heroku container:release web --app firepoint-production
 ```
