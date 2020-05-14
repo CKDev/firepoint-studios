@@ -46,39 +46,6 @@ include_once( APP_LEVEL . 'includes/layout/global-header.php');
 		<article class="row -- team-article">
 			<div class="col-md-1 hidden-sm-down">&nbsp;<!--gutter--></div>
 			<div class="col-md-4">
-				<div class="row -- profile">
-					<div class="col-12 offset-2 col-md-12">
-						<figure class="profile-figure">
-							<img src="<?php echo $ROOT; ?>/webroot/img/team/Mike-B.jpg" alt="..." class="rounded-circle">
-						</figure>
-					</div>
-					<div class="col-12 offset-2 col-md-16 clear -- profile-text">
-						<h3 class="profile-name">Mike Biselli</h3>
-						<p class="profile-role">Chief Executive Officer</p>
-						<!--<span class="hidden-md-up -- content-toggle"><i class="text-orange h3 -- fas fa-plus"></i></span>-->
-						<span class="hidden-md-up -- content-toggle-x"><a href="#modal" class="modal_link"><i class="text-orange h3 -- fas fa-plus"></i></span></a><!-- removed the content toggle -->
-						<span class="hidden-sm-down -- content">
-							<p class="profile-bio">In partnership with governmental, academic, non-profit, and commercial organizations, Mike Biselli and his team have created Catalyst HTI, a 180,000 square foot, first-of-its-kind industry integrator, in Denver’s River North District (RiNo) that houses 50+ health-tech startups and Fortune 20s alike in the race to fix American healthcare. 
-							<span class="modal-only">
-								<br /><br />
-								While a Board Member of Prime Health and a Senior Advisor to 10.10.10, Mike Biselli witnessed firsthand the tremendous power that a determined community of clinicians, executives, technologists, entrepreneurs, academics and investors could wield, and realized just how much more could be accomplished if that power were harnessed. 
-								<br /><br />
-								Realizing just how much more could be accomplished if that power were harnessed, Mike developed the industry integrator concept, a completely new feature of the innovation economy that allows the healthcare industry to be integrated at the point of innovation by physically housing an entire healthcare innovation ecosystem in a single location. 
-								<br /><br />
-								In addition to his realized vision for Catalyst HTI, Mike is also a CEO at Firepoint Studios, where him and his team work to partner with healthcare organizations to identify and engineer innovative processes and solutions to some of the industry’s toughest problems. 
-							
-							
-								<br /><br />"We're not going to re-imagine healthcare just through the largest and most powerful organizations that have dominated the space for the past fifty years. And it won’t happen with startups alone. We have to do it together. Because if we don’t, we are trending towards a five trillion dollar problem that can bring our country to its knees.
-								<br /><br />If you are passionate about reimagining healthcare, you have a seat at our table."
-								<br />– Mike Biselli, TEDx RiNo
-							</span></p>
-							<p class="read-more"><a href="#modal" class="modal_link"><i class="text-orange -- fas fa-plus"></i> <span>Read the full bio</span></a></p>
-						</span>
-					</div>
-				</div>
-			</div>
-			<div class="col-md-1 hidden-sm-down">&nbsp;<!--spacer--></div>
-			<div class="col-md-4">
 				<div class="row -- profile"><!-- the modal script for this page, will clone the profile-figure.html() and profile-text.html(), and append those clones to related modal containers -->
 					<div class="col-12 offset-2 col-md-12">
 						<figure class="profile-figure">
@@ -127,12 +94,7 @@ include_once( APP_LEVEL . 'includes/layout/global-header.php');
 					</div>
 				</div>
 			</div>
-			<div class="col-md-1 hidden-sm-down">&nbsp;<!--gutter--></div>
-			
-		</article>
-
-		<article class="row -- team-article">
-			<div class="col-md-1 hidden-sm-down">&nbsp;<!--gutter--></div>
+			<div class="col-md-1 hidden-sm-down">&nbsp;<!--spacer--></div>
 			<div class="col-md-4">
 				<div class="row -- profile">
 					<div class="col-12 offset-2 col-md-12">
@@ -159,7 +121,12 @@ include_once( APP_LEVEL . 'includes/layout/global-header.php');
 					</div>
 				</div>
 			</div>
-			<div class="col-md-1 hidden-sm-down">&nbsp;<!--spacer--></div>
+			<div class="col-md-1 hidden-sm-down">&nbsp;<!--gutter--></div>
+			
+		</article>
+
+		<article class="row -- team-article">
+			<div class="col-md-1 hidden-sm-down">&nbsp;<!--gutter--></div>
 			<div class="col-md-4">
 				<div class="row -- profile">
 					<div class="col-12 offset-2 col-md-12">
@@ -186,7 +153,7 @@ include_once( APP_LEVEL . 'includes/layout/global-header.php');
 					</div>
 				</div>
 			</div>
-			<div class="col-md-1 hidden-sm-down">&nbsp;<!--spacer--></div>			
+			<div class="col-md-1 hidden-sm-down">&nbsp;<!--spacer--></div>
 			<div class="col-md-4">
 				<div class="row -- profile">
 					<div class="col-12 offset-2 col-md-12">
@@ -207,12 +174,7 @@ include_once( APP_LEVEL . 'includes/layout/global-header.php');
 					</div>
 				</div>
 			</div>
-			<div class="col-md-1 hidden-sm-down">&nbsp;<!--spacer--></div>
-			
-		</article>
-
-		<article class="row -- team-article">
-			<div class="col-md-1 hidden-sm-down">&nbsp;<!--gutter--></div>
+			<div class="col-md-1 hidden-sm-down">&nbsp;<!--spacer--></div>			
 			<div class="col-md-4">
 				<div class="row -- profile">
 					<div class="col-12 offset-2 col-md-12">
@@ -232,6 +194,11 @@ include_once( APP_LEVEL . 'includes/layout/global-header.php');
 				</div>
 			</div>
 			<div class="col-md-1 hidden-sm-down">&nbsp;<!--spacer--></div>
+			
+		</article>
+
+		<article class="row -- team-article">
+			<div class="col-md-1 hidden-sm-down">&nbsp;<!--gutter--></div>
 			<div class="col-md-4">
 				<div class="row -- profile">
 					<div class="col-12 offset-2 col-md-12">
@@ -250,7 +217,7 @@ include_once( APP_LEVEL . 'includes/layout/global-header.php');
 					</div>
 				</div>
 			</div>
-			<div class="col-md-1 hidden-sm-down">&nbsp;<!--spacer--></div>			
+			<div class="col-md-1 hidden-sm-down">&nbsp;<!--spacer--></div>
 			<div class="col-md-4">
 				<div class="row -- profile">
 					<div class="col-12 offset-2 col-md-12">
@@ -269,31 +236,7 @@ include_once( APP_LEVEL . 'includes/layout/global-header.php');
 					</div>
 				</div>
 			</div>
-			<div class="col-md-1 hidden-sm-down">&nbsp;<!--spacer--></div>
-			
-		</article>
-
-		<article class="row -- team-article">
-			<div class="col-md-1 hidden-sm-down">&nbsp;<!--gutter--></div>
-			<div class="col-md-4">
-				<div class="row -- profile">
-					<div class="col-12 offset-2 col-md-12">
-						<figure class="profile-figure">
-							<img src="<?php echo $ROOT; ?>/webroot/img/team/Jesus.jpg" alt="..." class="rounded-circle">
-						</figure>
-					</div>
-					<div class="col-12 offset-2 col-md-16 clear -- profile-text">
-						<h3 class="profile-name">Jesús Garcia</h3>
-						<p class="profile-role">Solutions Architect</p>
-						<!--<span class="hidden-md-up -- content-toggle"><i class="text-orange h3 -- fas fa-plus"></i></span>-->
-						<span class="hidden-md-up -- content-toggle-x"><a href="#modal" class="modal_link"><i class="text-orange h3 -- fas fa-plus"></i></span></a><!-- removed the content toggle -->
-						<span class="hidden-sm-down -- content">
-							<p>Jesús Garcia has built a career on moving enterprise organizations into progressive, next-generation IT infrastructures that promote scalability, cost-effectiveness, configurability, and data segmentation. He worked as a lead solutions engineer for Puppet enterprises, and has engineered systems to help healthcare organizations embrace bold change at Envision Healthcare and Recondo.</p>
-						</span>
-					</div>
-				</div>
-			</div>
-			<div class="col-md-1 hidden-sm-down">&nbsp;<!--spacer--></div>
+			<div class="col-md-1 hidden-sm-down">&nbsp;<!--spacer--></div>			
 			<div class="col-md-4">
 				<div class="row -- profile">
 					<div class="col-12 offset-2 col-md-12">
@@ -312,10 +255,47 @@ include_once( APP_LEVEL . 'includes/layout/global-header.php');
 					</div>
 				</div>
 			</div>
-			<div class="col-md-1 hidden-sm-down">&nbsp;<!--spacer--></div>			
+			<div class="col-md-1 hidden-sm-down">&nbsp;<!--spacer--></div>
+			
 			
 		</article>
-	
+
+		<article class="row -- team-article">
+			<div class="col-md-1 hidden-sm-down">&nbsp;<!--gutter--></div>
+			<div class="col-md-4">
+				<div class="row -- profile">
+					<div class="col-12 offset-2 col-md-12">
+						<figure class="profile-figure">
+							<img src="<?php echo $ROOT; ?>/webroot/img/team/Mike-B.jpg" alt="..." class="rounded-circle">
+						</figure>
+					</div>
+					<div class="col-12 offset-2 col-md-16 clear -- profile-text">
+						<h3 class="profile-name">Mike Biselli</h3>
+						<p class="profile-role">Chairman of the Board</p>
+						<!--<span class="hidden-md-up -- content-toggle"><i class="text-orange h3 -- fas fa-plus"></i></span>-->
+						<span class="hidden-md-up -- content-toggle-x"><a href="#modal" class="modal_link"><i class="text-orange h3 -- fas fa-plus"></i></span></a><!-- removed the content toggle -->
+						<span class="hidden-sm-down -- content">
+							<p class="profile-bio">In partnership with governmental, academic, non-profit, and commercial organizations, Mike Biselli and his team have created Catalyst HTI, a 180,000 square foot, first-of-its-kind industry integrator, in Denver’s River North District (RiNo) that houses 50+ health-tech startups and Fortune 20s alike in the race to fix American healthcare. 
+							<span class="modal-only">
+								<br /><br />
+								While a Board Member of Prime Health and a Senior Advisor to 10.10.10, Mike Biselli witnessed firsthand the tremendous power that a determined community of clinicians, executives, technologists, entrepreneurs, academics and investors could wield, and realized just how much more could be accomplished if that power were harnessed. 
+								<br /><br />
+								Realizing just how much more could be accomplished if that power were harnessed, Mike developed the industry integrator concept, a completely new feature of the innovation economy that allows the healthcare industry to be integrated at the point of innovation by physically housing an entire healthcare innovation ecosystem in a single location. 
+								<br /><br />
+								In addition to his realized vision for Catalyst HTI, Mike is also the Chairman of the Board at Firepoint Studios, where him and his team work to partner with healthcare organizations to identify and engineer innovative processes and solutions to some of the industry’s toughest problems. 
+							
+							
+								<br /><br />"We're not going to re-imagine healthcare just through the largest and most powerful organizations that have dominated the space for the past fifty years. And it won’t happen with startups alone. We have to do it together. Because if we don’t, we are trending towards a five trillion dollar problem that can bring our country to its knees.
+								<br /><br />If you are passionate about reimagining healthcare, you have a seat at our table."
+								<br />– Mike Biselli, TEDx RiNo
+							</span></p>
+							<p class="read-more"><a href="#modal" class="modal_link"><i class="text-orange -- fas fa-plus"></i> <span>Read the full bio</span></a></p>
+						</span>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-1 hidden-sm-down">&nbsp;<!--spacer--></div>			
+		</article>
 	</section>
 
 	<section class="container-fluid -- introduction">

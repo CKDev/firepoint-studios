@@ -36,7 +36,9 @@
 						<a class="nav-link -- page-team" href="team">Team</a>
 						<a class="nav-link -- page-process" href="process">Process</a>
 						<a class="nav-link -- page-services" href="services">Services</a>
+						<!--
 						<a class="nav-link -- page-contact" href="contact">Contact</a>
+						-->
 					</nav>
 					<div class="nav-mask" id="navigation-mask">
 						<img src="<?php echo $ROOT; ?>/webroot/img/cursor.png" class="swipe" style="height: 8px; width: 8px; float: right; margin-top: 3px;" />

@@ -37,7 +37,7 @@ use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
-$dotenv = Dotenv\Dotenv::create(__DIR__);
+$dotenv = Dotenv\Dotenv::create(__DIR__ . '/..');
 $dotenv->load();
 
 // -----------------------------------------------------------------------

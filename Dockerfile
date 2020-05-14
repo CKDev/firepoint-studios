@@ -31,6 +31,9 @@ RUN chown -R app:app /var/log \
  && chown -R app:app /run \
  && chown -R app:app /app
 
+RUN touch /.env \
+ && chown app:app /.env
+
 ENTRYPOINT ["/entrypoint.sh"]
 
 VOLUME /var/log /var/cache
